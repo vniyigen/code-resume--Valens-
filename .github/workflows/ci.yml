@@ -1,18 +1,21 @@
-name: My first pipeline
+name: My First Pipeline
 
-on: push
+on:
+  push:
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Check out code
-              uses: actions/checkout@v2
-            - name: build image
-              run: docker build -t vniyigen/ciportifolio . 
-            - name: List images
-              run: docker images
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Build image
+        run: docker build -t vniyigen/ciportfolio .
+
+      - name: List images
+        run: docker images
 
     
             
